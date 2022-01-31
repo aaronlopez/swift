@@ -1,14 +1,14 @@
 //
-//  cursoApp.swift
-//  Shared
+//  TestingApp.swift
+//  Testing
 //
-//  Created by aaron lopez on 20/1/22.
+//  Created by aaron lopez on 23/1/22.
 //
 
 import SwiftUI
 
 @main
-struct cursoApp: App {
+struct TestingApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
