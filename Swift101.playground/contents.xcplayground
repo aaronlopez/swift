@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='macos' display-mode='raw' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='Bienvenida'/>
+        <page name='MostrandoValoresYComentarios'/>
+        <page name='ConstantesYVariables'/>
+        <page name='Optionals'/>
+        <page name='Basic Operators'/>
+        <page name='Strings'/>
+        <page name='Collections'/>
+        <page name='Control Flow'/>
+        <page name='Functions'/>
+        <page name='Enums'/>
+        <page name='Structures and Class'/>
+        <page name='Extensions'/>
+        <page name='Generics'/>
+        <page name='Protocols'/>
+    </pages>
+</playground>
