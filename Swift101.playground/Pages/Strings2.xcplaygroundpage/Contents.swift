@@ -73,10 +73,10 @@ func removeSpaces(_ str: String) -> String {
     
     return ""
 }
-
+/*
 assert(removeSpaces("El perro   come     pienso") == "El perro come pienso")
 assert(removeSpaces("    El perro   come     pienso     ") == "El perro come pienso")
-
+*/
 
 // 2 strings de entrada
 // 1 boolean
@@ -89,12 +89,12 @@ assert(removeSpaces("    El perro   come     pienso     ") == "El perro come pie
 func rotados (str1: String, str2: String) -> Bool {
     return true
 }
-
+/*
 assert(rotados(str1: "abcd", str2: "dabc") == true)
 assert(rotados(str1: "abcd", str2: "bcda") == true)
 assert(rotados(str1: "abcd", str2: "abcd") == true)
 assert(rotados(str1: "abcd", str2: "abdc") == false)
-
+*/
 
 
 // Número de vocales y de consonantes
@@ -134,6 +134,48 @@ assert(tresLetrasDiferente(str1: "amigo", str2: "elijo") == true, "error")
 assert(tresLetrasDiferente(str1: "martillo", str2: "molinill") == false, "error")
 */
 
+// solo respuestas incorrectas
+//N represensta el numéro de respuestas de un example
+// C es un String con las repuestas correctas A o B
+//debemos devolver un examen con todas las respuestas incorrectas
+
+func getWrongAnswers(n: Int, c:String) -> String {
+  // Write your code here
+    return ""
+}
+
+/*
+assert(getWrongAnswers(n: 3, c: "ABA") == "BAB", "error")
+assert(getWrongAnswers(n: 5, c: "BBBBB") == "AAAAA", "error")
+*/
+
+/*
+ Una mesa de cafetería consta de una fila de N asientos, numerados del 1 al N de izquierda a derecha. Las normas de distanciamiento social exigen que cada comensal se siente de forma que K asientos a su izquierda y K asientos a su derecha (o todos los asientos restantes a ese lado si hay menos de K) permanezcan vacíos.
+ En este momento hay M comensales sentados en la mesa, el iésimo de los cuales está en el asiento Si
+  . No hay dos comensales sentados en el mismo asiento y se cumplen las pautas de distanciamiento social.
+ Determine el número máximo de comensales adicionales que pueden sentarse en la mesa sin que se violen las pautas de distanciamiento social para cualquier comensal nuevo o existente, suponiendo que los comensales existentes no pueden moverse y que los comensales adicionales cooperarán para maximizar cuántos de ellos pueden sentarse
+ 
+ */
+func getMaxAdditionalDinersCount(n:Int, k:Int, m:Int, s:[Int])->Int {
+  // Write your code here
+  return 0;
+}
+
+
+/*
+assert(getMaxAdditionalDinersCount(n: 10, k:1,m: 2, s: [2,6]) == 3, "error")
+assert(getMaxAdditionalDinersCount(n: 15, k:2,m: 3, s: [11,6,14]) == 3, "error")
+*/
+ /*
+ TIP
+ En el primer caso, la mesa de la cafetería tiene N = 10 asientos, con dos comensales actualmente en los asientos 2 y 6 respectivamente. La mesa tiene inicialmente el siguiente aspecto, con paréntesis que cubren el K = 1 asiento a la izquierda y a la derecha de cada comensal existente que puede no estar ocupado.
+   1 2 3 4 5 6 7 8 9 10
+   [ ] [ ]
+ Tres comensales adicionales pueden sentarse en los asientos 4, 8 y 10 sin violar las pautas de distanciamiento social.
+
+ Traducción realizada con la versión gratuita del traductor www.DeepL.com/Translator
+ 
+ */
 
 //: [Next](@next)
 //: [Previous](@previous)
