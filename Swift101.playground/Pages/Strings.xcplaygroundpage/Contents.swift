@@ -18,7 +18,7 @@ let autoestopista = """
  Tenemos  caractares especiales
  \0 (null character), \\ (backslash), \t (horizontal tab), \n (line feed), \r (carriage return), \" (double quotation mark) and \' (single quotation mark)
  */
-
+import Foundation
 //añade una string con al menos dos de los caraecteres especiales
 
 
@@ -32,32 +32,33 @@ print(#"Ejemplo de string con delimitador extendido //"#)
 
 // Juguemos con los strings
 
-let empty = ""
-let empty2 = String()
-let empty3: String?
+var empty = ""
+var empty2 = String("")
+var empty3: String? = ""
 
 //¿Que diferencias crees que hay entre ellas?
-//empty == empty2
-//empty == empty3
+empty == empty2
+empty == empty3
 
 
 //usando el . trata de saber si la strings estaVacia
-
+print(empty.isEmpty)
 
 //concatenando strings
 
-let hello = "Hello"
+var hello = "Hello"
 let world  = "world"
 let helloWorld = hello + world
 
 //descomenta la linea siguiente y resuelve el problema
-//hello += world
+hello += world
 
 //Character
 let aCharacter :Character = "H"
+let aCharacter2 :Character = "A"
 
 //¿Que crees que sucedera en las dos siguientes instruciones?
-//let whatType = "A" + aCharacter
+//let whatType = aCharacter2 + aCharacter
 //print(type(of: whatType))
 
 var stringWithCharacter = "Hello"
@@ -78,30 +79,45 @@ let unusualMenae🐨 = "Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪"
 
 // Subcadenas y operaciones sobre strings
 
-let aLongString = " This is a long string please, play with me"
+var aLongString = " This is a long string please, play with me"
 
 //abre la documentacion de String y resuelve los siguientes ejericios
 
 //obten en el número de caracteres
-
+aLongString.count
 //obten dos cadenas separadas por ,
+aLongString.split(separator: ",")
+//convierte toda la cadena a minusculas
+aLongString.lowercased()
+//convierte toda la cadena a mayusculas
+aLongString.uppercased()
 
 //Añade la cadena "Please" al final SIN usar el operador + en la 10 posicion
 
-//convierte toda la cadena a minusculas
-//convierte toda la cadena a mayusculas
-
-
 //acceder al elemento 4
 //aLongString[4]
-
 let index = aLongString.index(aLongString.startIndex, offsetBy: 4)
-aLongString[index]
+//aLongString[index] = "a"
 
 
+
+// Añador elementos delate
+aLongString = "ahsh " + aLongString
+aLongString.insert("A", at: aLongString.startIndex)
+// Añadir elementos detras
+aLongString.append(contentsOf: "Aaa")
+aLongString.insert("A", at: aLongString.endIndex)
+//insertar un elemento en una posicion
+//aLongString.insert("A", at: aLongString.index(aLongString.startIndex, offsetBy: 4))
+
+// buscar el indice de  "play"
+aLongString.contains("play")
+let range = aLongString.range(of: "long")
+// Reemplazar palabras: long -> short
+aLongString.replaceSubrange(range!, with: "short")
 //Igualdad
 // Dos Strings son iguales cuando SU VALOR es igual
-
+let repeated = repeatElement("*", count: 5)
 
 
 //: [Previous](@previous)
