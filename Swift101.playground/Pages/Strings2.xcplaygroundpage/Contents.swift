@@ -1,38 +1,47 @@
 import Foundation
 
 //Identificar letras repetidas en un string
-// "hola" --> True
-// "casa" --> False
-// "cAsa" --> True
 
-func letrasRepetidas (_ str: String) -> Bool {
+func letrasRepetidas (_ word: String) -> Bool {
+    var iterLeter: String = ""
+    for letter in word {
+        if iterLeter.contains(letter) {
+            return true
+        }
+        iterLeter.insert(letter, at: iterLeter.endIndex)
+    }
     return false
 }
 
-/*assert(letrasRepetidas( "hola") == false)
+assert(letrasRepetidas( "hola") == false)
 assert(letrasRepetidas("casa") == true)
 assert(letrasRepetidas("cAsa") == false)
-*/
+
 
 // Es un palindromo
 //ala --> se lee igual de izquierda a derecha que de derecha a izquierda
 
 func palindromo (_ str: String) -> Bool {
-    return false
+    return str == String(str.reversed())
 }
 
-/*
+
  assert(palindromo("ala") == true)
 assert(palindromo("casa") == false)
-*/
+
 
 //Devuelve verdadero sin dos strings tienen los mismos caracteres
 
 func mismosCaracteres (str1: String, str2: String) -> Bool {
-    return false
+    for letter in str1 {
+        if !str2.lowercased().contains(letter.lowercased()) {
+            return false
+        }
+     }
+    return str1.count == str2.count
 }
 
-/*
+
 assert(mismosCaracteres(str1: "saco", str2: "cosa") == true)
 assert(mismosCaracteres(str1: "hola", str2: "hola") == true)
 assert(mismosCaracteres(str1: "casa", str2: "camion") == false)
@@ -40,13 +49,19 @@ assert(mismosCaracteres(str1: "abc", str2: "cba") == true)
 assert(mismosCaracteres(str1: "abca", str2: "cba") == false)
 assert(mismosCaracteres(str1: "a", str2: "aa") == false)
 assert(mismosCaracteres(str1: "Hola", str2: "hOLa") == true)
-*/
+
 
 
 // Contar las letras diferentes en un String
 
-func diferentLetters (str: String) -> Int {
-    return 0
+func diferentLetters (word: String) -> Int {
+    var iterLeter: String = ""
+    for letter in word {
+        if !iterLeter.contains(letter) {
+            iterLeter.insert(letter, at: iterLeter.endIndex)
+        }
+    }
+    return iterLeter.count
 }
 
 /*
