@@ -112,10 +112,12 @@ aLongString.insert("A", at: aLongString.endIndex)
 
 // buscar el indice de  "play"
 aLongString.contains("play")
-let range = aLongString.range(of: "long")
+let range = aLongString.range(of: "adsfkljaflsdasdfñ")
 // Reemplazar palabras: long -> short
-aLongString.replaceSubrange(range!, with: "short")
-//Igualdad
+if let r = range {
+    aLongString.replaceSubrange(r, with: "short")
+}
+    //Igualdad
 // Dos Strings son iguales cuando SU VALOR es igual
 let repeated = repeatElement("*", count: 5)
 

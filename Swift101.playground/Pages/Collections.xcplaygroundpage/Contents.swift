@@ -14,11 +14,15 @@ shoppingList += ["Bread"]
 
 // Añade un elemento al array
 
+var ppp = [1, 2 ,3]
+print(type(of: ppp))
+ppp[0] = 5
+if ppp == [5,2,3] {
+    print("Iguales")
+}
 // Añade un elemento como primer elemento
 
 //ordena la lista
-
-
 //imprime el número de elementos
 
 //que crees que hará el metodo siguiente SIN ejecutarlo
@@ -39,7 +43,7 @@ for (index, value) in shoppingList.enumerated() {
 Las claves y los valores deben tener el mismo tipo entre ellos
  */
 
-var userPasword : [String: String] = [:]
+var userPasword: [String: String] = [:]
 userPasword["Aaron"] = "11111"
 userPasword["Aaron"]
 //obtenemos el número de elementos
@@ -55,18 +59,13 @@ userPasword["Aaron"] = "22222"
 userPasword.updateValue("333", forKey: "Aaron")
 userPasword["Aaron"]
 
+for uP in userPasword {
+    print("Item \(uP.key): \(uP.value)")
+}
 
 //Crea un Diccionario con una clave de tipo String que represente el DNI y un valor de tipo Tuple que sea nombre y apellido
 //añade al menos 4 elementos
 
-
-
-/*:
- ### Sets
- A set stores distinct values of the same type in a collection with no defined ordering. You can use a set instead of an array when the order of items isn’t important, or when you need to ensure that an item only appears once.
- 
-Las claves y los valores deben tener el mismo tipo entre ellos
- */
 
 var generos: Set<String> = ["Rock", "Classical", "Hip hop"]
 

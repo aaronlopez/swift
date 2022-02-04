@@ -10,59 +10,62 @@ func helloWorld(){
     print("Hello Word")
 }
 
-helloWorld()
+//helloWorld()
 //las funciones pueden devolver valores
 
 
-func helloWorldWithValue() -> String{
+func helloWorld() -> String{
      return "Hello Word"
 }
 
-let hello = helloWorldWithValue()
+let hello: String = helloWorld()
 
 //Cambia el nombre de la funcion helloWorldWithValue y llamala helloWorld
 //Que sucede? Por qué?
 
 //Añadiendo parametros
-func hello(name:String = "World") -> String{
+func hello(who name:String = "World") -> String{
         return "Hello \(name)"
 }
 
 hello()
-hello(name: "Aarón")
+hello(who:"Aarón")
 
 //las Strings se pasan por valor
 
-var name = "Peter"
-func reapeatString( name: String){
-  //  name = name + "Parker"
+var pepe = "Peter"
+func reapeatString( name:inout String){
+    name = name + "Parker"
 }
 
-reapeatString(name:name)
-print(name)
+reapeatString(name:&pepe)
+print(pepe)
 
 //pero las colleciones se pasan por referencia
-var names = ["Peter"]
+var namesAAA = ["Peter"]
 func reapeatStringArray(_ name:[String]){
-    names += ["Parker"]
+    namesAAA += ["Parker"]
 }
-print(names)
-reapeatStringArray(names)
-print(names)
+print(namesAAA)
+reapeatStringArray(namesAAA)
+print(namesAAA)
 
 //pero existe el parametro inout que podemos poner, que os voy a explicar ahora y lo vais a olvidar según termine
 
 
 
 //usar funciones como parametros
+
+
+func printMathResult(operation mathFunction: (Int, Int) -> Int,  a: Int, b: Int) {
+    print("Result: \(mathFunction(a, b))")
+}
+printMathResult(operation: addTwoInts, a: 3,b: 5)
+
+
 func addTwoInts(_ a: Int, _ b: Int) -> Int {
     return a + b
 }
-
-func printMathResult(_ mathFunction: (Int, Int) -> Int, _ a: Int, _ b: Int) {
-    print("Result: \(mathFunction(a, b))")
-}
-printMathResult(addTwoInts, 3, 5)
 
 // Closures
 let addTwoIntsClosure = {(_ a: Int, _ b: Int) -> Int in

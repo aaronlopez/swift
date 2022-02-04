@@ -7,10 +7,6 @@
  Se usan mucho en el trabajo con valores que vienen desde backends y en conversiones de tipos
  */
 
-let possibleNumber = "1233"
-let convertedNumber = Int(possibleNumber)
-print(type(of: convertedNumber))
-
 // declara una variable de tipo String, con valor "A" y trata de convertila a Int() e imprime su tipo
 
 
@@ -18,19 +14,21 @@ print(type(of: convertedNumber))
 //nil representa la ausencia de valor
 
 var serverResponseCode: Int? = 404
+print(type(of: serverResponseCode))
+
 serverResponseCode = nil
 
 //quita el opcional de la linea anterior y ejecuta el playground
 
-var iAmNil: String?
+var iAmNil: String? = "Y tengo valor"
 
 //forzando el valor !
 
-print(type(of: convertedNumber!))
+//print(type(of: iAmNil!))
 
 // Optional Binding
 
-if let convertedNumberUnwrap = convertedNumber {
+if let convertedNumberUnwrap = iAmNil {
     print(type(of: convertedNumberUnwrap))
 }
 
@@ -41,3 +39,7 @@ if let convertedNumberUnwrap = convertedNumber {
 
 //: [Previous](@previous)
 //: [Next](@next)
+let possibleNumber = "1233"
+let convertedNumber = Int(possibleNumber)
+print(type(of: convertedNumber))
+

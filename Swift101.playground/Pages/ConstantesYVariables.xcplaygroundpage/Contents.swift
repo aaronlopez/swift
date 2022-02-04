@@ -15,7 +15,8 @@ var soyOtraVariable = 4
 soyOtraVariable = 5
 
 //define una constante llamada "apellido" con valor "lopez" y trata de cambiar su valor a "rodriguez"
-
+var apellido = "Lopez"
+apellido = "Leidia"
 
 
 //podemos definir en una sola linea varias variables
@@ -43,6 +44,7 @@ var variableCadenaConValorInicial: String = "Con valor inicial"
 
 var variableCadenaConValorInicialPeroSinTipo = "Con valor inicial sin tipo"
 
+
 print(type(of: variableCadenaConValorInicialPeroSinTipo))
 
 let constanteCade: String
@@ -51,11 +53,7 @@ let constanteCade: String
 
 //TypeSafe y conversión de tipos
 // let estoFalla: String = 5
-let estoNoFalla: String = String(5)
-
-/*:
- # Type Alias
- */
+//let estoNoFalla: String = String(5)
 
 typealias AudioSample = UInt16
 
@@ -69,7 +67,7 @@ print(type(of: variableConTipoAlias))
 let soyVerdadera: Bool = true
 let soyFalsa: Bool = false
 
-//let unoNOesBool: Bool = 1
+let unoNOesBool: Bool = (1 != 0)
 
 /*:
  # Tuples
@@ -96,10 +94,9 @@ print(justTheStatusCode)
 let http200Status = (statusCode: 200, description: "OK")
 http200Status.statusCode
 http200Status.description
-
 //declara la tupla login con valores usuario y password
 
-
+let login = (login: "jj", password:"ooooo")
 
 //: [Previous](@previous)
 //: [Next](@next)
