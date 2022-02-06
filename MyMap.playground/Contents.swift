@@ -3,7 +3,6 @@
 import MapKit
 import PlaygroundSupport
 
-
 let appleParkWayCoordinates = CLLocationCoordinate2DMake(37.334922, -122.009033)
 
 // Now let's create a MKMapView
@@ -30,4 +29,15 @@ mapView.addAnnotation(annotation)
 // Add the created mapView to our Playground Live View
 PlaygroundPage.current.liveView = mapView
 
-mapRegion.center = CLLocationCoordinate2D(latitude: 27.000, longitude: -18.000)
+/*mapView.setCenter(CLLocationCoordinate2D(latitude: 28.09973, longitude:  -15.41343), animated: true)*/
+
+class MyMapDelegate: NSObject, MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+          print(view)
+        mapView.mapType = MKMapType.satellite
+        }
+}
+
+let myMap = MyMapDelegate()
+mapView.delegate = myMap
+
