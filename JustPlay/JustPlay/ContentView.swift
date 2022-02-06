@@ -1,16 +1,21 @@
 //
 //  ContentView.swift
-//  Testing
+//  JustPlay
 //
-//  Created by aaron lopez on 23/1/22.
+//  Created by aaron lopez on 4/2/22.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Button("Title", action: pepe)
+        }
+    }
+    
+    func pepe(){
+        
     }
 }
 

@@ -20,7 +20,7 @@ pila.pop()
 
 // Crea una funcion generica que imprima por pantall
 // Crea un Cola generica
-// Crea una calculadora generia que sume, reste y multiplique
+// Crea una calculadora generia que sume, reste y multiplique de manera generica
 
 //: [Previous](@previous)
 //: [Next](@next)

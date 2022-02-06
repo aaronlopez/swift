@@ -3,7 +3,12 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/aaronlopez/Desktop/curso/Swift101.playground/Pages/Structures%20and%20Class.xcplaygroundpage#CharacterRangeLen=14&amp;CharacterRangeLoc=943&amp;EndingColumnNumber=0&amp;EndingLineNumber=36&amp;StartingColumnNumber=1&amp;StartingLineNumber=35&amp;Timestamp=665256418.454641"
+         documentLocation = "file:///Users/aaronlopez/Desktop/curso/Swift101.playground/Pages/Structures%20and%20Class.xcplaygroundpage#CharacterRangeLen=14&amp;CharacterRangeLoc=943&amp;EndingColumnNumber=0&amp;EndingLineNumber=36&amp;StartingColumnNumber=1&amp;StartingLineNumber=35&amp;Timestamp=665855657.3708071"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/aaronlopez/Desktop/curso/Swift101.playground/Pages/Structures%20and%20Class.xcplaygroundpage#CharacterRangeLen=6&amp;CharacterRangeLoc=5035&amp;EndingColumnNumber=11&amp;EndingLineNumber=222&amp;StartingColumnNumber=5&amp;StartingLineNumber=222&amp;Timestamp=665855657.370946"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>

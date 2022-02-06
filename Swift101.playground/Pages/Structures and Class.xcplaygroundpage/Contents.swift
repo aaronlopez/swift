@@ -78,15 +78,8 @@ var perroStruct = PerroStruct()
 // vamos a heredar de la Clase animal cambiando añadiendo despues del nombre Perro:Animal
 
 
-//PREGUNTA:
-
-// ¿Cómo crees que implementa swfit los Int, String, Boolean.... todos los tipos básicos?
-
-
-
 //Structures and Enumerations Are Value Types
 //¿Qué significa eso? ¿Crear el código necesario para comprobarlo? ¿Y las clases?Compruebalo
-
 
 
 //Jugando con la igualdad
@@ -185,6 +178,126 @@ class StepCounter {
 }
 let stepCounter = StepCounter()
 stepCounter.totalSteps = 200
+
+
+
+
+/*
+ Crea una agenda completa en la que puedas almacenar contactos con nombre, telefono, email, siEsFavorito
+ 
+ Debemos poder buscar por telefono y por nombre
+ Poder  autocompletar que de te devuelva todos los contactos que cumplan con los criterios de busqueda en cualquiera de slos campos por ejemplo si busco "lop" devuelva todos los contactos que contengan esa cadena en el nombre o en el correo
+ 
+ Podemos mandar un mensaje e imprima por consola "MEnsaje texto del mensaje a y la persona "
+ Que podamos ordenar la agenda por nombre, por telefono y por email
+ tener una lista de todos los favoritos
+ Se pueda agregar elementos a la lista
+ borrarlos y actualizarlos
+ Que en cada contacto podamos "llamar" e imprima por consola que estamos llamando
+ */
+ 
+
+ 
+
+
+/**Herencia y override**/
+
+class Vehicle {
+    var currentSpeed = 0.0
+    var description: String {
+        return "traveling at \(currentSpeed) miles per hour"
+    }
+    func makeNoise() {
+        // do nothing - an arbitrary vehicle doesn't necessarily make a noise
+    }
+}
+
+class Bicycle: Vehicle {
+    var hasBasket = false
+}
+
+class Tandem: Bicycle {
+    var currentNumberOfPassengers = 0
+}
+
+let tandem = Tandem()
+
+let bicycle = Bicycle()
+bicycle.hasBasket = true
+
+class Train: Vehicle {
+    override func makeNoise() {
+        print("Choo Choo")
+    }
+}
+
+
+class Car: Vehicle {
+    var gear = 1
+    override var description: String {
+        return super.description + " in gear \(gear)"
+    }
+}
+
+class AutomaticCar: Car {
+    override var currentSpeed: Double {
+        didSet {
+            gear = Int(currentSpeed / 10.0) + 1
+        }
+    }
+}
+
+
+//Se puede impedir que se haga override con la palabra final
+
+
+//Jugando con los constructores
+//Crea un struct carrera con una variable distancia en metros pero que tenga dos constructures uno al que se le pasan los valores enkilometros y otro al que se le pasan los valores en millas
+
+
+
+
+//deinit y un ejemplo que es malo con ganas
+class Bank {
+    static var coinsInBank = 10_000
+    static func distribute(coins numberOfCoinsRequested: Int) -> Int {
+        let numberOfCoinsToVend = min(numberOfCoinsRequested, coinsInBank)
+        coinsInBank -= numberOfCoinsToVend
+        return numberOfCoinsToVend
+    }
+    static func receive(coins: Int) {
+        coinsInBank += coins
+    }
+}
+
+class Player {
+    var coinsInPurse: Int
+    init(coins: Int) {
+        coinsInPurse = Bank.distribute(coins: coins)
+    }
+    func win(coins: Int) {
+        coinsInPurse += Bank.distribute(coins: coins)
+    }
+    deinit {
+        Bank.receive(coins: coinsInPurse)
+    }
+}
+
+var playerOne: Player? = Player(coins: 100)
+print("A new player has joined the game with \(playerOne!.coinsInPurse) coins")
+// Prints "A new player has joined the game with 100 coins"
+print("There are now \(Bank.coinsInBank) coins left in the bank")
+// Prints "There are now 9900 coins left in the bank"
+playerOne!.win(coins: 2_000)
+print("PlayerOne won 2000 coins & now has \(playerOne!.coinsInPurse) coins")
+// Prints "PlayerOne won 2000 coins & now has 2100 coins"
+print("The bank now only has \(Bank.coinsInBank) coins left")
+// Prints "The bank now only has 7900 coins left"
+playerOne = nil
+print("PlayerOne has left the game")
+// Prints "PlayerOne has left the game"
+print("The bank now has \(Bank.coinsInBank) coins")
+// Prints "The bank now has 10000 coins"
 
 
 //: [Previous](@previous)

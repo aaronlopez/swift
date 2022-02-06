@@ -1,13 +1,13 @@
 //
-//  TestingUITestsLaunchTests.swift
-//  TestingUITests
+//  JustPlayUITestsLaunchTests.swift
+//  JustPlayUITests
 //
-//  Created by aaron lopez on 23/1/22.
+//  Created by aaron lopez on 4/2/22.
 //
 
 import XCTest
 
-class TestingUITestsLaunchTests: XCTestCase {
+class JustPlayUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

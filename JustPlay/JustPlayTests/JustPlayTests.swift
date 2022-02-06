@@ -1,14 +1,14 @@
 //
-//  TestingTests.swift
-//  TestingTests
+//  JustPlayTests.swift
+//  JustPlayTests
 //
-//  Created by aaron lopez on 23/1/22.
+//  Created by aaron lopez on 4/2/22.
 //
 
 import XCTest
-@testable import Testing
+@testable import JustPlay
 
-class TestingTests: XCTestCase {
+class JustPlayTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

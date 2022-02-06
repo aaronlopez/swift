@@ -30,7 +30,23 @@ extension Simple {
 instance.change()
 instance.p
 
-// Crea una estructura CuentaBancaria, con un nombre y un total, crea una extension para el manejo en cajeros, donde se pueda añadir y scar dinero, otra extension para tarjetas de credito donde se tenga un limite y se pueda hacer pagos 
+/* Extiende la clase Double para que haga automaticamente conversion a mm, cm, m, km ejemplo, supondiendo que el valor por defecto de Double SON Metros
+ */
+extension Double {
+    var km: Double { return  self * 1000}
+   /* var m
+    var cm
+    var mm*/
+}
+var kilometroYMedio: Double = 1.5.km
+
+if kilometroYMedio == 1500 {
+    print("Exito")
+}
+
+
+/* Extiende la clase String para agregar otra string delate mediante una funcion llamada preprend*/
+
 
 //: [Previous](@previous)
 //: [Next](@next)
