@@ -1,5 +1,5 @@
 /*:
- # Structures and Class
+ # Structures and Classes
 
 En swift Struct and Class son mucho más parecidos en en otros lenguajes.
  
@@ -18,7 +18,7 @@ Ambos:
  */
 
 //sintaxis básica
-
+import Foundation
 class AClass {
     var aProperty: String = ""
     var anOptionalProperty: String?
@@ -32,20 +32,23 @@ struct AnStruct {
 }
 
 // Los structs tiene un constructor por defecto con las variables que añamos metido
+
 var aStruct = AnStruct(aProperty: "", anOptionalProperty: nil)
 print(aStruct)
-
 //En class nosotros creamos los constructores o asignamos valores por defectos a las propiedades
 class AnotherClass {
     var aProperty: String
     var anOptionalProperty: String?
+    init(a: String){
+        self.aProperty = a
+    }
     init(a: String, b: String?){
         self.aProperty = a
         self.anOptionalProperty = b
     }
 }
 
-let anotherClass = AnotherClass(a: "Avalue", b: nil)
+let anotherClass = AnotherClass(a: "Avalue")
 
 
 //a las propiedades se acceden usando el .
@@ -59,10 +62,25 @@ anotherClass.aProperty = "Otro valor"
 
 //crea la struct y la clase animal con sus constructores y las propiedades raza, nombre
 
+struct AnimalS{
+    var raza: String
+    var nombre: String
+    init(withRaza raza:String, andNombre name:String){
+        self.raza = raza
+        self.nombre = name
+    }
+}
 
+class Animal{
+    var raza: String
+    var nombre: String
+    init(withRaza raza:String, andNombre name:String){
+        self.raza = raza
+        self.nombre = name
+    }
+}
 
-
-class Perro {
+class Perro: Animal {
     var tieneChip: Bool = false
 }
 
@@ -70,21 +88,30 @@ struct PerroStruct {
     var tieneChip: Bool = false
 }
 
-var perro = Perro()
+var perro = Perro(withRaza: "Golden Retriever", andNombre: "Lola")
 var perroStruct = PerroStruct()
 
 //Herencia
 // Las clases pueden heredar pero los structs NO
 // vamos a heredar de la Clase animal cambiando añadiendo despues del nombre Perro:Animal
 
+print(perro.tieneChip)
+
+func a(objetito:Perro){
+    objetito.tieneChip = true
+}
+
+
+a(objetito: perro)
+print(perro.tieneChip)
 
 //Structures and Enumerations Are Value Types
 //¿Qué significa eso? ¿Crear el código necesario para comprobarlo? ¿Y las clases?Compruebalo
 
 
 //Jugando con la igualdad
-
 /*
+
 class Igualdad {
     var aValue: String
     init(_ aValue:String){
@@ -98,12 +125,12 @@ let other = Igualdad("Hey")
 if igualdad === other {
     print("Iguales")
 }
-let otherIgual = igualdad
+//let otherIgual = other
 
-if otherIgual === igualdad {
+if otherIgual === other {
     print("Iguales")
 }
- */
+*/
 
 //Cambia la clase Igualdad a struct y piensa que sucede
 
@@ -125,7 +152,7 @@ if otherIgual == igualdad {
 
 
 //Propiedades computadas
-struct Contacto {
+/*struct Contacto {
     var nombre: String
     var apellido: String
     var nombreCompleto: String {
@@ -133,11 +160,11 @@ struct Contacto {
             return "\(nombre) \(apellido)"
         }
     }
-}
+}*/
 
-var contacto = Contacto(nombre: "Aarón", apellido: "López")
+/*var contacto = Contacto(nombre: "Aarón", apellido: "López")
 contacto.nombreCompleto
-
+*/
 //Descomenta esta linea, ¿Qué pasará? ¿Qué significa?
 //contacto.nombreCompleto = "HELLO"
 // elimina el GET para que es innecsario ya que es una variable de solo lectura
@@ -145,7 +172,24 @@ contacto.nombreCompleto
 
 // Crea una un struct con una variable computada que tenga get y set ( es decir que sea de lectura y escritura)
 
+struct Name {
+    var firsLetter: Character?
+    var fullName: String = ""
+    var full: String {
+        get {
+           return fullName
+        }
+        set(newFull) {
+            firsLetter = newFull.first
+            fullName = newFull
+        }
+    }
+}
 
+var name = Name()
+name.full = "Pepe"
+name.fullName
+name.firsLetter
 //LAZY PROPERTIES
 
 class Imprimo {
@@ -161,7 +205,14 @@ class TengoUnaPropertyLazy {
 
 // Cuantas veces se va a imprimir "Imprimo"
 var lazySample = TengoUnaPropertyLazy()
-
+lazySample.print
+lazySample.print
+lazySample.print
+lazySample.print
+lazySample.print
+lazySample.print
+lazySample.print
+lazySample.print
 
 //Oberservando propiedades
 class StepCounter {
@@ -196,7 +247,46 @@ stepCounter.totalSteps = 200
  Que en cada contacto podamos "llamar" e imprima por consola que estamos llamando
  */
  
+struct Contacto: Equatable {
+    var nombre: String = ""
+    var telefono: String = ""
+    var isFavourite: Bool = false
+    var email: String = ""
+    func llamar(){
+        print("Llamando a \(nombre) \(telefono)")
+    }
+    func emailTo(){
+        print("Llamando a \(nombre) \(email)")
+    }
+}
 
+struct Agenda {
+    var contactos: [Contacto] = []
+
+    mutating func add(anContact: Contacto){
+         contactos.append(anContact)
+        
+    }
+
+    mutating func remove(aContact: Contacto){
+        for (index,c) in contactos.enumerated() {
+            if c == aContact {
+                contactos.remove(at: index)
+            }
+        }
+    }
+
+    func search(by str:String)-> [Contacto]{
+        var filterContacts: [Contacto] = []
+        for c in contactos {
+            if c.nombre.contains(str) || c.email.contains(str) {
+                filterContacts.append(c)
+            }
+        }
+        return filterContacts
+    }
+    
+}
  
 
 
@@ -252,9 +342,20 @@ class AutomaticCar: Car {
 
 
 //Jugando con los constructores
-//Crea un struct carrera con una variable distancia en metros pero que tenga dos constructures uno al que se le pasan los valores enkilometros y otro al que se le pasan los valores en millas
+//Crea un class carrera con una variable distancia en metros pero que tenga dos constructures uno al que se le pasan los valores enkilometros y otro al que se le pasan los valores en millas
 
+class Carrera {
+    var meters: Double = 0
+    init(byKilometers km : Double){
+        self.meters = km * 1000
+    }
+    init(byMiles miles : Double){
+        self.meters = miles / 0.00062137
+    }
+}
 
+var carreras = Carrera(byMiles: 7)
+var carrera = Carrera(byKilometers: 1.5)
 
 
 //deinit y un ejemplo que es malo con ganas
@@ -278,9 +379,9 @@ class Player {
     func win(coins: Int) {
         coinsInPurse += Bank.distribute(coins: coins)
     }
-    deinit {
+    /*deinit {
         Bank.receive(coins: coinsInPurse)
-    }
+    }*/
 }
 
 var playerOne: Player? = Player(coins: 100)

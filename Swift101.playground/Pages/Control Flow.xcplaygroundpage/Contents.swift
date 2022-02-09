@@ -90,6 +90,19 @@ for index in 1...3 {
 }
 
 
+
+func controlo(first:String?, second:String?)->String{
+    guard let f = first else{
+        return ""
+    }
+    guard let s = second else{
+        return ""
+    }
+     return "\(f)-\(s)"
+}
+
+    
+    
 // crea un array con valores de estilos musicales y un diccionario de persona y genero favorito
 //recorre el array y printa todos los elementos
 
@@ -103,3 +116,11 @@ for index in 1...3 {
 
 //: [Previous](@previous)
 //: [Next](@next)
+
+var i = 2
+
+repeat {
+    i *= i * 2
+} while i < 100
+
+print(i)

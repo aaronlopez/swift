@@ -34,11 +34,23 @@ instance.p
  */
 extension Double {
     var km: Double { return  self * 1000}
-   /* var m
-    var cm
-    var mm*/
+    func km1()->Double{
+        return  self * 1000 as Double
+    }
+    var m: Double { return  self}
+
+    var cm: Double { return  self / 100}
+
+    var mm: Double { return  self / 1000}
+
+ 
 }
-var kilometroYMedio: Double = 1.5.km
+
+extension Double {
+    
+}
+
+var kilometroYMedio: Double = 1.5.cm
 
 if kilometroYMedio == 1500 {
     print("Exito")
@@ -47,6 +59,34 @@ if kilometroYMedio == 1500 {
 
 /* Extiende la clase String para agregar otra string delate mediante una funcion llamada preprend*/
 
+extension String {
+    mutating func prepend(_ str:String)->String {
+         self = str + self
+        return self
+    }
+}
+
+var s = "Pepe"
+s.prepend("Hola ")
+
+extension Int {
+    enum Kind {
+        case negative, zero, positive
+    }
+    var kind: Kind {
+        switch self {
+        case 0:
+            return .zero
+        case let x where x > 0:
+            return .positive
+        default:
+            return .negative
+        }
+    }
+}
+
+var positivo = 20
+positivo.kind
 
 //: [Previous](@previous)
 //: [Next](@next)

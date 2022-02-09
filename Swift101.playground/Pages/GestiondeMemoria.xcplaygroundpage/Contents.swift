@@ -40,6 +40,7 @@ class CreditCard {
     init(number: UInt64, customer: Customer) {
         self.number = number
         self.customer = customer
+        print("Credit Card Initialized")
     }
     deinit { print("Card #\(number) is being deinitialized") }
 }

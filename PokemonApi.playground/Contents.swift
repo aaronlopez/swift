@@ -17,18 +17,32 @@ var route = "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20"
 var request = URLRequest(url: URL(string: route)!)
 request.httpMethod = "GET"
 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+struct Pokemon{
+    var name: String
+    var url: String
+}
 
+struct Response {
+    var count: Int
+    var results: [Pokemon]
+}
+var pokemons: [Pokemon] = []
 let session = URLSession.shared
 let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
     print(response!)
     do {
-        let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
-        print(json)
+        let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Response>
+        if let results = json["results"]{
+            print(results)
+        }
+
     } catch {
         print("error")
     }
 })
 
 task.resume()
+
+
 
 //

@@ -7,11 +7,11 @@ let appleParkWayCoordinates = CLLocationCoordinate2DMake(37.334922, -122.009033)
 
 // Now let's create a MKMapView
 let mapView = MKMapView(frame: CGRect(x:0, y:0, width:800, height:800))
-
+mapView.mapType = .hybrid
 // Define a region for our map view
 var mapRegion = MKCoordinateRegion()
 
-let mapRegionSpan = 0.02
+let mapRegionSpan = 0.12
 mapRegion.center = appleParkWayCoordinates
 mapRegion.span.latitudeDelta = mapRegionSpan
 mapRegion.span.longitudeDelta = mapRegionSpan
@@ -21,7 +21,7 @@ mapView.setRegion(mapRegion, animated: true)
 // Create a map annotation
 let annotation = MKPointAnnotation()
 annotation.coordinate = appleParkWayCoordinates
-annotation.title = "Apple Inc."
+annotation.title = "ASDFASD Inc."
 annotation.subtitle = "One Apple Park Way, Cupertino, California."
 
 mapView.addAnnotation(annotation)

@@ -31,6 +31,7 @@ c.1 = String(2)
 print(a == c)
 
 //Operador ternario
+let valor = true
 
 (true ? 50 : 20) //pasalo a false
 

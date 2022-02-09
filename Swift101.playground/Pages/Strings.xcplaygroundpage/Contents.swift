@@ -112,7 +112,7 @@ aLongString.insert("A", at: aLongString.endIndex)
 
 // buscar el indice de  "play"
 aLongString.contains("play")
-let range = aLongString.range(of: "adsfkljaflsdasdfñ")
+let range = aLongString.range(of: "play")
 // Reemplazar palabras: long -> short
 if let r = range {
     aLongString.replaceSubrange(r, with: "short")
