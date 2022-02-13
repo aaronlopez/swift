@@ -16,7 +16,7 @@
         <page name='Extensions'/>
         <page name='Generics'/>
         <page name='Protocols'/>
-        <page name='Concurrencia'/>
         <page name='GestiondeMemoria'/>
+        <page name='Ejercicios'/>
     </pages>
 </playground>

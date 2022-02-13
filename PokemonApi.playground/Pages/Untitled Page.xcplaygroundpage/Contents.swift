@@ -13,27 +13,29 @@ Hoy queremos usar recursos de red ya que es lo más común en todas las aplicaci
 
 import Foundation
 
-var route = "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20"
+let route = "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20"
 var request = URLRequest(url: URL(string: route)!)
 request.httpMethod = "GET"
 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-struct Pokemon{
+struct Pokemon: Codable {
     var name: String
     var url: String
 }
 
-struct Response {
+struct Response: Codable {
     var count: Int
-    var results: [Pokemon]
+    var results: [Pokemon]?
 }
 var pokemons: [Pokemon] = []
 let session = URLSession.shared
 let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-    print(response!)
     do {
-        let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Response>
-        if let results = json["results"]{
-            print(results)
+        let decoder = JSONDecoder()
+
+        let json = try decoder.decode(Response.self, from: data!)
+        if let pokemons =  json.results{
+            print(pokemons[1].name)
+            print(pokemons[1].url)
         }
 
     } catch {
