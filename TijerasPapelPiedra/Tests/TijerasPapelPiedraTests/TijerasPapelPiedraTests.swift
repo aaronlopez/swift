@@ -12,7 +12,7 @@ import XCTest
     }
      
     func testPiedraGanaTijeras() throws {
-        XCTAssertEqual(self.juego.compare(p1: .papel, p2: .piedra), .gana)
+        XCTAssertEqual(self.juego.compare(p1: .piedra, p2: .tijera), .gana)
     }
     
      func testigualesEmpata() throws {

@@ -14,7 +14,11 @@ struct Lista: View {
                     List {
                         ForEach(agenda.contactos, id: \.self) { contacto in
                             NavigationLink(destination: DetalleLista(contacto:contacto)){
-                                Text(contacto.email)
+                                HStack {
+                                    Text(contacto.nombre)
+                                    Text(contacto.email)
+                                }
+                                
                             }
                         }
                         .onDelete(perform: delete)

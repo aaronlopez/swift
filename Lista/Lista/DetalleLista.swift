@@ -11,12 +11,16 @@ struct DetalleLista: View {
     @State var contacto: Contacto
 
     var body: some View {
-        Text(contacto.nombre)
+        VStack {
+            DetalleRow(image: "phone", label: contacto.telefono)
+           
+
+        }
     }
 }
 
 struct DetalleLista_Previews: PreviewProvider {
     static var previews: some View {
-        DetalleLista(contacto: Contacto())
+        DetalleLista(contacto: Contacto(id: UUID(), nombre: "aaron", telefono: "612443121234", isFavourite: true, email: "aaa.@gmail.com"))
     }
 }

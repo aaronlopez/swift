@@ -18,6 +18,7 @@
 		59506DD427B6D17600B46EE1 /* ListaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59506DD327B6D17600B46EE1 /* ListaTests.swift */; };
 		59506DDE27B6D17600B46EE1 /* ListaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59506DDD27B6D17600B46EE1 /* ListaUITests.swift */; };
 		59506DE027B6D17600B46EE1 /* ListaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59506DDF27B6D17600B46EE1 /* ListaUITestsLaunchTests.swift */; };
+		59F8FD0527BADD500019B368 /* DetalleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F8FD0427BADD500019B368 /* DetalleRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		59506DD927B6D17600B46EE1 /* ListaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59506DDD27B6D17600B46EE1 /* ListaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaUITests.swift; sourceTree = "<group>"; };
 		59506DDF27B6D17600B46EE1 /* ListaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		59F8FD0427BADD500019B368 /* DetalleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				59506DC627B6D17600B46EE1 /* Assets.xcassets */,
 				59506DC827B6D17600B46EE1 /* Preview Content */,
 				5937133027B97AD300E28CF6 /* Agenda.swift */,
+				59F8FD0427BADD500019B368 /* DetalleRow.swift */,
 			);
 			path = Lista;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				5937133327B97E0600E28CF6 /* Lista.swift in Sources */,
 				5937133727B9876900E28CF6 /* NuevoContacto.swift in Sources */,
 				5937133527B981DF00E28CF6 /* DetalleLista.swift in Sources */,
+				59F8FD0527BADD500019B368 /* DetalleRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
