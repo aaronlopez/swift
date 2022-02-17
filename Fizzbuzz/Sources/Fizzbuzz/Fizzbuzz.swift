@@ -1,6 +1,33 @@
  struct Fizzbuzz {
      func calcula(num:Int)->String {
-         return ""
+         var fizz = ""
+         if num % 3 == 0 {
+             fizz += "Fizz"
+         }
+         if num % 5 == 0 {
+             fizz += "Buzz"
+         }
+         return fizz.isEmpty ? String(num) : fizz
+     }
+     
+     func calcula2(num:Int)->String {
+         if num % 3 == 0 &&  num % 5 == 0{
+             return "FizzBuzz"
+         }else if num % 3 == 0{
+             return "Fizz"
+         }
+         else if num % 5 == 0 {
+             return "Buzz"
+         }
+         return String(num)
+     }
+     
+     
+     func allValues(){
+         for i in 1...100 {
+             print(calcula(num: i))
+         }
+             
      }
 }
 

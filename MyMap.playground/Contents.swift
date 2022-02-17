@@ -33,9 +33,20 @@ PlaygroundPage.current.liveView = mapView
 
 class MyMapDelegate: NSObject, MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-          print(view)
-        mapView.mapType = MKMapType.satellite
+          print("Seleccionado")
+        mapView.mapType = .hybrid
+    
+       
         }
+    func mapView(_ mapView: MKMapView, didDeselect: MKAnnotationView){
+        print("Deseleccionado")
+        mapView.mapType = .satellite
+        mapView.setCenter(CLLocationCoordinate2D(latitude: 28.09973, longitude:  -15.41343), animated: false)
+        
+    }
+    func mapViewWillStartLoadingMap(_ mapView: MKMapView){
+        print("CargandoMapa")
+    }
 }
 
 let myMap = MyMapDelegate()

@@ -3,7 +3,7 @@
  
  Los strings son colleciones de Character, eso quiere decir que podemos acceder tanto a la colleción completa como a cada caracter individualmente
  */
-
+import Foundation
 let aString = "Hello World"
 
 //esto es una String multilinea
@@ -117,7 +117,8 @@ let range = aLongString.range(of: "play")
 if let r = range {
     aLongString.replaceSubrange(r, with: "short")
 }
-    //Igualdad
+
+//Igualdad
 // Dos Strings son iguales cuando SU VALOR es igual
 let repeated = repeatElement("*", count: 5)
 
