@@ -10,12 +10,14 @@ import SwiftUI
 struct NuevoContacto: View {
     @ObservedObject var agenda: Agenda
     @Environment(\.dismiss) var dismiss
-
+    @State var name: String = ""
     var body: some View {
+        TextField("Name", text: $name)
         Button("Add") {
-            agenda.add(anContact: Contacto(id: UUID(), nombre: "nuevo", telefono: "unTelefono", isFavourite: true, email: "AnEmail"))
+            agenda.add(anContact: Contacto(id: UUID(), nombre: name, telefono: "unTelefono", isFavourite: true, email: "AnEmail"))
             dismiss()
         }
+       
     }
 }
 

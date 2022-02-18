@@ -20,7 +20,9 @@
  https://docs.swift.org/swift-book/
  */
 
-let tradicion_primero = "Hola Mundo"
+let tradicion_primero:String
+
+tradicion_primero = "asdf"
 
 /*:
  #### TIP
